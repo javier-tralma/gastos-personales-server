@@ -1,0 +1,40 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "ERP Gastos Personales - Backend API",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "db:generate": "drizzle-kit generate --config drizzle.config.ts",
+    "db:migrate": "tsx src/db/migrate-cli.ts",
+    "db:check": "drizzle-kit check --config drizzle.config.ts",
+    "db:studio": "drizzle-kit studio --config drizzle.config.ts",
+    "db:generate:pg": "npm run db:generate",
+    "db:migrate:pg": "npm run db:migrate",
+    "db:check:pg": "npm run db:check",
+    "db:studio:pg": "npm run db:studio",
+    "db:generate:sqlite": "drizzle-kit generate --config drizzle.sqlite.config.ts",
+    "db:check:sqlite": "drizzle-kit check --config drizzle.sqlite.config.ts",
+    "db:studio:sqlite": "drizzle-kit studio --config drizzle.sqlite.config.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hono/node-server": "^1.13.0",
+    "@types/pg": "^8.20.0",
+    "better-auth": "^1.6.11",
+    "drizzle-orm": "^0.45.0",
+    "hono": "^4.7.0",
+    "pg": "^8.21.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "drizzle-kit": "^0.31.10",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0"
+  }
+}
