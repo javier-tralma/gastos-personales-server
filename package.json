@@ -4,6 +4,9 @@
   "description": "ERP Gastos Personales - Backend API",
   "type": "module",
   "main": "src/index.ts",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "db:generate": "drizzle-kit generate --config drizzle.config.ts",

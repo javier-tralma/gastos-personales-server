@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: gastos-personales-server
+    runtime: node
+    plan: free
+    autoDeploy: true
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BETTER_AUTH_SECRET
+        sync: false
+      - key: BETTER_AUTH_URL
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: POSTGRES_DATABASE_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: DRIZZLE_MIGRATIONS_FOLDER
+        value: ./drizzle-pg
